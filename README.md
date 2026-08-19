@@ -115,7 +115,7 @@ will run every submission on the hidden test split in the same evaluation
 environment. The complete scoring procedure is provided in the
 competition notebook.
 
-Competition notebook: [https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
+[Competition notebook](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
 
 ## CodeBERT baseline
 
@@ -147,8 +147,8 @@ submission must include:
 
 Detailed rules and executable instructions will be published separately.
 
-- Colab instructions: [https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
-- CoteBERT baseline notebook: [https://colab.research.google.com/drive/1q1fGPpU7uxaK1mUVHa3b2xJOtEwhWwLG?usp=sharing](https://colab.research.google.com/drive/1q1fGPpU7uxaK1mUVHa3b2xJOtEwhWwLG?usp=sharing)
+- [Colab instructions](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
+- [CoteBERT baseline notebook](https://colab.research.google.com/drive/1q1fGPpU7uxaK1mUVHa3b2xJOtEwhWwLG?usp=sharing)
 
 ## Citing related work
 
