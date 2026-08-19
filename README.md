@@ -107,11 +107,7 @@ The dataset was prepared as follows:
 
 Precision, recall, accuracy, and F1-score are calculated independently for the
 weakness and MAT outputs. The primary predictive metric is the unweighted mean
-of the two task-specific F1-scores:
-
-\[
-F1_{mean} = \frac{F1_{weakness} + F1_{MAT}}{2}
-\]
+of the two task-specific F1-scores.
 
 For the final competition ranking, mean F1 contributes 60% of the score.
 Average execution time and average GFLOPs each contribute 20%. The organisers
