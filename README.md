@@ -119,7 +119,7 @@ will run every submission on the hidden test split in the same evaluation
 environment. The complete scoring procedure is provided in the
 competition notebook.
 
-Competition notebook: XXX
+Competition notebook: [https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
 
 ## CodeBERT baseline
 
