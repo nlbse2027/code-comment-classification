@@ -95,10 +95,6 @@ The label order is `[weakness, MAT]`:
 Participants do **not** need to train separate classifiers for the two labels, individual projects, or programming languages. 
 The objective is to build **one model capable of performing both classification tasks jointly** across the dataset.
 
-**Dataset input:** The released dataset contains the field `Function` but no
-separate developer-comment field. MAT is supplied as a target annotation; it
-is not an additional text input in this release. (I do not understand this...)
-
 ## Loading the dataset
 
 Install the Datasets library and load both public splits:
