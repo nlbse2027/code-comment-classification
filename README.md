@@ -1,19 +1,20 @@
 # NLBSE'27 Tool Competition: Multitask Code Classification
 
-This repository contains the competition dataset, baseline scores, and supporting resources.
+This repository provides the dataset, baseline results, and supporting resources
+for the NLBSE'27 Tool Competition on multitask code classification.
 
 Competition website: https://nlbse2027.github.io/tool/
 
 ## Competition Overview
 
-Automatically identifying vulnerabilities in modern codebases can help developers detect security issues earlier and improve overall software quality.
+Automated vulnerability detection can help developers identify security issues
+earlier and improve software quality. However,
+their computational demands can hinder real-world deployment, making
+**predictive performance, execution time, and resource consumption** equally
+important considerations.
 
-Recent advances in Machine Learning (ML) and Natural Language Processing (NLP) have opened new possibilities for automated code analysis. 
-In particular, Large Language Models have demonstrated good results in understanding and classifying source code. 
-However, these models can also be computationally expensive, making **efficiency, execution time, and resource consumption** important considerations for real-world deployment.
-
-This competition explores whether we can build accurate and efficient tools for automated code analysis.
-In this challenge, participants are asked to develop **a single ML model capable of performing two independent tasks concurrently**:
+This competition challenges participants to balance these objectives by
+developing **a single ML model that performs two classification tasks jointly**:
 
 1. **Vulnerability Detection** — determine whether a source-code function contains a weakness or vulnerability.
 2. **MAT Detection** — determine whether the function is positive for the **MAT annotation,** representing the competition's SATD-related target.
