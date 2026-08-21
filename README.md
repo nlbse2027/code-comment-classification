@@ -1,46 +1,60 @@
 # NLBSE'27 Tool Competition: Multitask Code Classification
 
-This repository contains the dataset and baseline results for the
-NLBSE'27 Tool Competition on multitask code classification.
+This repository contains the competition dataset, baseline scores, and supporting resources.
 
-Competition webpage: [https://nlbse2027.github.io/tool/](https://nlbse2027.github.io/tool/)
+Competition website: https://nlbse2027.github.io/tool/
 
-Participants must develop **one multi-label model** that jointly predicts:
+## Competition Overview
 
-1. whether a source-code function contains a weakness or vulnerability; and
-2. whether the function is positive for the MAT annotation, which represents
-   the competition's SATD-related target.
+Automatically identifying vulnerabilities in modern codebases can help developers detect security issues earlier and improve overall software quality.
 
-Models are compared by predictive performance, execution time, and
-computational cost in a common evaluation environment.
+Recent advances in Machine Learning (ML) and Natural Language Processing (NLP) have opened new possibilities for automated code analysis. 
+In particular, Large Language Models have demonstrated good results in understanding and classifying source code. 
+However, these models can also be computationally expensive, making **efficiency, execution time, and resource consumption** important considerations for real-world deployment.
 
-- [Competition task](#competition-task)
+This competition explores whether we can build accurate and efficient tools for automated code analysis.
+In this challenge, participants are asked to develop **a single ML model capable of performing two independent tasks concurrently**:
+
+1. **Vulnerability Detection** — determine whether a source-code function contains a weakness or vulnerability.
+2. **MAT Detection** — determine whether the function is positive for the **MAT annotation,** representing the competition's SATD-related target.
+
+In other words, **one function goes in, and one model produces two predictions**:
+
+```text
+                 ┌─> Vulnerability / Weakness
+Source Function ─┤
+                 └─> MAT / SATD-related label
+```
+
+Models will be evaluated on: 
+- **predictive performance**
+- **Execution time**
+- **Computational cost**
+
+All submissions will be evaluated in a common environment to ensure a fair comparison.
+
+## Contents
+
+- [Competition Task](#competition-task)
 - [Dataset](#dataset)
-- [Loading the dataset](#loading-the-dataset)
-- [Dataset preparation](#dataset-preparation)
+- [Loading the Dataset](#loading-the-dataset)
+- [Dataset Preparation](#dataset-preparation)
 - [Evaluation](#evaluation)
-- [CodeBERT baseline](#codebert-baseline)
+- [CodeBERT Baseline](#codebert-baseline)
 - [Participation](#participation)
-- [Citing related work](#citing-related-work)
+- [Citing Related Work](#citing-related-work)
 
-## Competition task
+## Competition Task
 
-Each instance contains a formatted source-code function and one two-element
-binary label. The label order is `[weakness, MAT]`:
+The competition is formulated as a **supervised multi-label classification problem**.
+Given a formatted source-code function as input, the model must predict two binary labels:
 
-| Label | Meaning |
-| --- | --- |
-| `[0, 0]` | Neither weakness-positive nor MAT-positive |
-| `[1, 0]` | Weakness-positive and not MAT-positive |
-| `[0, 1]` | Not weakness-positive and MAT-positive |
-| `[1, 1]` | Both weakness-positive and MAT-positive |
+| Task | Prediction |
+|---|---|
+| **Weakness/Vulnerability Detection** | Whether the function contains a weakness or vulnerability |
+| **MAT Detection** | Whether the function is positive for the MAT annotation |
 
-Both outputs must be predicted by a single model. Separate classifiers for
-individual projects, programming languages, or labels are not required.
-
-**Dataset input:** The released dataset contains the field `Function` but no
-separate developer-comment field. MAT is supplied as a target annotation; it
-is not an additional text input in this release.
+Participants should therefore develop **one multitask model** capable of learning both classification tasks jointly.
 
 ## Dataset
 
@@ -55,11 +69,10 @@ The [Hugging Face repository](https://huggingface.co/datasets/NLBSE/nlbse27-code
 | `train` | **214,586** | Available | Model training |
 | `test` | **30,655** | Available | Local evaluation and result reporting |
 
-An additional **61,311-instance hidden test split** is retained by the
-organisers for the final ranking. It is not distributed through this
-repository and must not be used for training, tuning, or model selection.
 
-Each published row contains four columns:
+An additional **61,311-instance hidden test split** is retained by the organisers and will be used for the final evaluation and ranking. 
+
+Each observation in the dataset is compose by 4 attribts:
 
 | Column | Description |
 | --- | --- |
@@ -67,6 +80,24 @@ Each published row contains four columns:
 | `Filepath` | Original source-file path |
 | `Function` | Source-code function after formatting |
 | `Label` | Binary vector in `[weakness, MAT]` order |
+
+For the classification tasks, the **`Function`** column contains the source code that should be provided to the model.
+The corresponding targets are stored in **`Label`** as a two-dimensional binary vector.
+The label order is `[weakness, MAT]`:
+
+| Label | Meaning |
+| --- | --- |
+| `[0, 0]` | Neither weakness-positive nor MAT-positive |
+| `[1, 0]` | Weakness-positive and not MAT-positive |
+| `[0, 1]` | Not weakness-positive and MAT-positive |
+| `[1, 1]` | Both weakness-positive and MAT-positive |
+
+Participants do **not** need to train separate classifiers for the two labels, individual projects, or programming languages. 
+The objective is to build **one model capable of performing both classification tasks jointly** across the dataset.
+
+**Dataset input:** The released dataset contains the field `Function` but no
+separate developer-comment field. MAT is supplied as a target annotation; it
+is not an additional text input in this release. (I do not understand this...)
 
 ## Loading the dataset
 
@@ -105,9 +136,8 @@ The dataset was prepared as follows:
 
 ## Evaluation
 
-Precision, recall, accuracy, and F1-score are calculated independently for the
-weakness and MAT outputs. The primary predictive metric is the unweighted mean
-of the two task-specific F1-scores.
+Precision, recall, accuracy, and F1-score are calculated independently for the weakness and MAT outputs. 
+The primary predictive metric is the mean of the two task-specific F1-scores.
 
 For the final competition ranking, mean F1 contributes 60% of the score.
 Average execution time and average GFLOPs each contribute 20%. The organisers
@@ -140,12 +170,12 @@ The trained baseline is available from the
 Participants must train and evaluate one model that predicts both labels. A
 submission must include:
 
-- a description of the model architecture and preprocessing;
-- the training and tuning procedure;
-- results on the published test split; and
-- open-source code with instructions for reproducing the results.
+- A description of the model architecture and preprocessing;
+- The training and tuning procedure;
+- Results on the published test split; and
+- Open-source code with instructions for reproducing the results.
 
-Detailed rules and executable instructions will be published separately.
+Detailed rules and executable instructions are provided in competition website [https://nlbse2027.github.io/tool/](https://nlbse2027.github.io/tool/).
 
 - [Colab instructions](https://colab.research.google.com/drive/1b_EiXx5woyCrDntwbljfi-BwS9Dwvhoa?usp=sharing)
 - [CoteBERT baseline notebook](https://colab.research.google.com/drive/1q1fGPpU7uxaK1mUVHa3b2xJOtEwhWwLG?usp=sharing)
