@@ -16,15 +16,15 @@ important considerations.
 This competition challenges participants to balance these objectives by
 developing **a single ML model that performs two classification tasks jointly**:
 
-1. **Vulnerability Detection** — determine whether a source-code function contains a weakness or vulnerability.
-2. **MAT Detection** — determine whether the function is positive for the **MAT annotation,** representing the competition's SATD-related target.
+1. **Vulnerability Detection** — determine whether a source-code function contains a vulnerability.
+2. **SATD Detection** — determine whether the function is positive for the **SATD** representing a self-admitted technical debt, e.g., `//FIXME: bad implementation`
 
 In other words, **one function goes in, and one model produces two predictions**:
 
 ```text
-                 ┌─> Vulnerability / Weakness
+                 ┌─> Vulnerability
 Source Function ─┤
-                 └─> MAT / SATD-related label
+                 └─> SATD
 ```
 
 Models will be evaluated on: 
