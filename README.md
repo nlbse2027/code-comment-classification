@@ -179,7 +179,18 @@ Detailed rules and executable instructions are provided in competition website [
 
 ## Citing related work
 
-Please also cite the work underlying the dataset:
+General Competition Citation:
+
+```bibtex
+@inproceedings{nlbse2027,
+  author = {Moritz Mock and Thomas Borsani and Barbara Russo},
+  title={The NLBSE'27 Tool Competition},
+  booktitle={Proceedings of the 6th International Workshop on Natural Language-based Software Engineering (NLBSE'27)},
+  year={2027}
+}
+```
+
+Please also cite the work underlying the dataset and baseline for the code comment competition:
 
 ```bibtex
 @inproceedings{MockEtAl2024MadeWIC,
@@ -200,5 +211,33 @@ Please also cite the work underlying the dataset:
   pages     = {1--12},
   year      = {2025},
   doi       = {10.1109/ICPC66645.2025.00017}
+}
+```
+
+```bibtex
+@inproceedings{feng-etal-2020-codebert,
+    title = "{C}ode{BERT}: A Pre-Trained Model for Programming and Natural Languages",
+    author = "Feng, Zhangyin  and
+      Guo, Daya  and
+      Tang, Duyu  and
+      Duan, Nan  and
+      Feng, Xiaocheng  and
+      Gong, Ming  and
+      Shou, Linjun  and
+      Qin, Bing  and
+      Liu, Ting  and
+      Jiang, Daxin  and
+      Zhou, Ming",
+    editor = "Cohn, Trevor  and
+      He, Yulan  and
+      Liu, Yang",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2020",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.findings-emnlp.139/",
+    doi = "10.18653/v1/2020.findings-emnlp.139",
+    pages = "1536--1547"
 }
 ```
