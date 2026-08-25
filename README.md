@@ -63,7 +63,7 @@ The competition dataset is derived from
 [MADE-WIC](https://doi.org/10.1145/3691620.3695348) and combines instances from
 the OSPR, Big-Vul, and Devign collections.
 
-The [Hugging Face repository](https://huggingface.co/datasets/NLBSE/nlbse27-code-classification) provides two participant-facing splits:
+The [Hugging Face repository](https://huggingface.co/datasets/NLBSE/nlbse27-code-comment-classification) provides two participant-facing splits:
 
 | Hub split | Instances | Labels | Intended use |
 | --- | ---: | --- | --- |
@@ -107,7 +107,7 @@ python -m pip install datasets
 ```python
 from datasets import load_dataset
 
-dataset = load_dataset("NLBSE/nlbse27-code-classification")
+dataset = load_dataset("NLBSE/nlbse27-code-comment-classification")
 train_dataset = dataset["train"]
 test_dataset = dataset["test"]
 
@@ -160,7 +160,7 @@ evaluated once on the complete public test split.
 | Unweighted average | 0.978 | 0.961 | 0.869 | 0.910 |
 
 The trained baseline is available from the
-[NLBSE'27 CodeBERT baseline repository](https://huggingface.co/NLBSE/nlbse27-code-classification-baseline).
+[NLBSE'27 CodeBERT baseline repository](https://huggingface.co/NLBSE/nlbse27-code-comment-classification-baseline).
 
 ## Participation
 
