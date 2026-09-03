@@ -183,11 +183,12 @@ General Competition Citation:
 
 ```bibtex
 @inproceedings{nlbse2027,
-  author = {Moritz Mock and Thomas Borsani and Barbara Russo},
-  title={The NLBSE'27 Tool Competition},
-  booktitle={Proceedings of the 6th International Workshop on Natural Language-based Software Engineering (NLBSE'27)},
-  year={2027}
-}
+@inproceedings{nlbse2027,
+  author = {Mock, Moritz and Borsani, Thomas and Russo, Barbara and Santos, Fabio and and Penney, Jacob and Valenzuela{-}Toledo, Pablo and Kehrer, Timo and Panichella, Sebastiano },
+  title={The NLBSE'27 Tool Competition and Challenge},
+  booktitle={Proceedings of The 6th International Workshop on Natural Language-based Software Engineering (NLBSE'27)},
+  year={2027}
+} (bearbeitet)
 ```
 
 Please also cite the work underlying the dataset and baseline for the code comment competition:
